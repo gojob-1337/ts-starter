@@ -1,4 +1,0 @@
-{
-  "extends": ["@gojob/eslint-config/typescript"],
-  "parserOptions": { "project": "tsconfig.json" }
-}

@@ -1,8 +1,13 @@
 # pnpm 11 no longer reads settings from the "pnpm" field in package.json.
 # Overrides and other pnpm settings live here instead.
+#
+# @gojob/eslint-config pins its plugins to majors that predate ESLint 10, so
+# each is raised to a version that supports it. ESLint resolves a parser
+# relative to the config package that declares it, so a direct dependency
+# would not take effect here - only an override does.
 overrides:
-  # @gojob/eslint-config depends on eslint-plugin-prettier@^4, which calls the
-  # synchronous Prettier API that Prettier 3 removed. v5 is the compatible line.
   eslint-plugin-prettier: ^5.5.6
+  eslint-config-prettier: ^10.1.8
+  eslint-plugin-simple-import-sort: ^14.0.0
   "@typescript-eslint/parser": ^8.68.0
   "@typescript-eslint/eslint-plugin": ^8.68.0

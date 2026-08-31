@@ -16,13 +16,15 @@
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint ."
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^10.0.1",
     "@gojob/eslint-config": "^5.4.0",
     "@tsconfig/node22": "^22.0.6",
     "@types/node": "^22.20.1",
-    "eslint": "^8.57.1",
+    "eslint": "^10.9.1",
     "prettier": "^3.9.6",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
