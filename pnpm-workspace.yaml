@@ -3,6 +3,6 @@
 overrides:
   # @gojob/eslint-config depends on eslint-plugin-prettier@^4, which calls the
   # synchronous Prettier API that Prettier 3 removed. v5 is the compatible line.
-  eslint-plugin-prettier: ^5.2.1
-  "@typescript-eslint/parser": ^8.0.0
-  "@typescript-eslint/eslint-plugin": ^8.0.0
+  eslint-plugin-prettier: ^5.5.6
+  "@typescript-eslint/parser": ^8.68.0
+  "@typescript-eslint/eslint-plugin": ^8.68.0
