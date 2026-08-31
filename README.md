@@ -5,19 +5,22 @@ starting point for the Gojob technical interview.
 
 ## Requirements
 
-- **Node 20** — pinned in [`.nvmrc`](.nvmrc) and via [Volta](https://volta.sh) in
+- **Node 22** — pinned in [`.nvmrc`](.nvmrc) and via [Volta](https://volta.sh) in
   `package.json`. With `nvm`, run `nvm use`; with Volta it is picked up
   automatically.
-- **Yarn 1.x** — the repo ships a `yarn.lock`.
+- **pnpm 11** — pinned through the `packageManager` field. You do not need to
+  install it yourself: run `corepack enable` once and the right version is used
+  automatically.
 
-Node 18 and below will not work: the TypeScript config extends
-`@tsconfig/node20`.
+Node 20 and below will not work: it reached end of life in April 2026, and the
+TypeScript config extends `@tsconfig/node22`.
 
 ## Getting started
 
 ```bash
-yarn install
-yarn test
+corepack enable
+pnpm install
+pnpm test
 ```
 
 You should see the example test pass. If it does, your environment is ready.
@@ -26,16 +29,16 @@ You should see the example test pass. If it does, your environment is ready.
 
 The repo ships a [dev container](.devcontainer/devcontainer.json). Opening the
 folder in VS Code ("Reopen in Container") or in GitHub Codespaces gives you Node
-20 with dependencies already installed, plus the recommended extensions.
+22 with dependencies already installed, plus the recommended extensions.
 
 ## Commands
 
-| Command           | Description                                  |
-| ----------------- | -------------------------------------------- |
-| `yarn test`       | Run the test suite once                      |
-| `yarn test:watch` | Run the tests in watch mode (handy for TDD)  |
-| `yarn build`      | Type-check and compile to `dist/`            |
-| `yarn lint`       | Lint every `.ts` file                        |
+| Command           | Description                                 |
+| ----------------- | ------------------------------------------- |
+| `pnpm test`       | Run the test suite once                     |
+| `pnpm test:watch` | Run the tests in watch mode (handy for TDD) |
+| `pnpm build`      | Type-check and compile to `dist/`           |
+| `pnpm lint`       | Lint every `.ts` file                       |
 
 ## Writing tests
 
@@ -50,5 +53,5 @@ src/
 
 `src/sum.ts` and `src/sum.spec.ts` are a throwaway example so that a fresh clone
 builds, tests and lints green. **Delete them when you start the exercise** — but
-keep at least one `.ts` file in `src/`, otherwise `yarn build` fails with
+keep at least one `.ts` file in `src/`, otherwise `pnpm build` fails with
 `TS18003: No inputs were found in config file`.
