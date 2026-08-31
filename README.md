@@ -1,7 +1,7 @@
 # ts-starter
 
-A minimal TypeScript starter (TypeScript + Jest + ESLint + Prettier) used as the
-starting point for the Gojob technical interview.
+A minimal TypeScript starter (TypeScript + Vitest + ESLint + Prettier) used as
+the starting point for the Gojob technical interview.
 
 ## Requirements
 
@@ -50,6 +50,9 @@ src/
   sum.ts
   sum.spec.ts
 ```
+
+`describe`, `it` and `expect` are available as globals — there is nothing to
+import.
 
 `src/sum.ts` and `src/sum.spec.ts` are a throwaway example so that a fresh clone
 builds, tests and lints green. **Delete them when you start the exercise** — but
