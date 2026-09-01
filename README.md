@@ -47,14 +47,14 @@ code they cover:
 
 ```
 src/
-  sum.ts
-  sum.spec.ts
+  foo.ts
+  foo.spec.ts
 ```
 
 `describe`, `it` and `expect` are available as globals — there is nothing to
 import.
 
-`src/sum.ts` and `src/sum.spec.ts` are a throwaway example so that a fresh clone
+`src/foo.ts` and `src/foo.spec.ts` are a throwaway example so that a fresh clone
 builds, tests and lints green. **Delete them when you start the exercise** — but
 keep at least one `.ts` file in `src/`, otherwise `pnpm build` fails with
 `TS18003: No inputs were found in config file`.
