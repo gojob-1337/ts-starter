@@ -5,6 +5,15 @@
   // Node 22, to match .nvmrc, the Volta pin and @tsconfig/node22.
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
 
+  // Before downloading the pinned pnpm, corepack asks "Do you want to
+  // continue?" and waits. Nobody can answer that during container creation, so
+  // postCreateCommand hangs. Set container-wide rather than only on the command
+  // below, so a later "packageManager" bump does not stall a candidate's first
+  // pnpm call in a terminal the same way.
+  "containerEnv": {
+    "COREPACK_ENABLE_DOWNLOAD_PROMPT": "0"
+  },
+
   // Enable corepack so the pnpm version in package.json's "packageManager"
   // field is the one actually used, then install dependencies.
   //
