@@ -7,7 +7,13 @@
 
   // Enable corepack so the pnpm version in package.json's "packageManager"
   // field is the one actually used, then install dependencies.
-  "postCreateCommand": "corepack enable && pnpm install",
+  //
+  // The shims go to /usr/local/share/npm-global/bin rather than corepack's
+  // default /usr/local/bin: postCreateCommand runs as the non-root "node" user,
+  // which cannot write to /usr/local/bin (EACCES). That directory is owned by
+  // "node" and comes first on PATH, so the shims also take precedence over the
+  // pnpm the image ships globally.
+  "postCreateCommand": "corepack enable --install-directory /usr/local/share/npm-global/bin && pnpm install",
 
   "customizations": {
     "vscode": {
