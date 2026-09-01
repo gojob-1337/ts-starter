@@ -5,7 +5,7 @@
   "author": "David Olivier <dolivier83390@gmail.com>",
   "license": "MIT",
   "private": false,
-  "packageManager": "pnpm@11.24.0",
+  "packageManager": "pnpm@11.25.0",
   "engines": {
     "node": ">=22"
   },
