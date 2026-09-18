@@ -14,6 +14,10 @@
     "COREPACK_ENABLE_DOWNLOAD_PROMPT": "0"
   },
 
+  "mounts": [
+    "source=${devcontainerId}-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
+
   // Enable corepack so the pnpm version in package.json's "packageManager"
   // field is the one actually used, then install dependencies.
   //
@@ -22,7 +26,7 @@
   // which cannot write to /usr/local/bin (EACCES). That directory is owned by
   // "node" and comes first on PATH, so the shims also take precedence over the
   // pnpm the image ships globally.
-  "postCreateCommand": "corepack enable --install-directory /usr/local/share/npm-global/bin && pnpm install",
+  "postCreateCommand": "sudo chown node:node node_modules && corepack enable --install-directory /usr/local/share/npm-global/bin && pnpm install",
 
   "customizations": {
     "vscode": {
