@@ -33,12 +33,25 @@ folder in VS Code ("Reopen in Container") or in GitHub Codespaces gives you Node
 
 ## Commands
 
-| Command           | Description                                 |
-| ----------------- | ------------------------------------------- |
-| `pnpm test`       | Run the test suite once                     |
-| `pnpm test:watch` | Run the tests in watch mode (handy for TDD) |
-| `pnpm build`      | Type-check and compile to `dist/`           |
-| `pnpm lint`       | Lint every `.ts` file                       |
+| Command             | Description                                 |
+| ------------------- | ------------------------------------------- |
+| `pnpm test`         | Run the test suite once                     |
+| `pnpm test:watch`   | Run the tests in watch mode (handy for TDD) |
+| `pnpm build`        | Type-check and compile to `dist/`           |
+| `pnpm lint`         | Lint every `.ts` file                       |
+| `pnpm lint:fix`     | Lint and apply the fixes ESLint can make    |
+| `pnpm format`       | Format the repo with Prettier               |
+| `pnpm format:check` | Report formatting problems without fixing   |
+
+## Editor setup
+
+Both VS Code and the dev container are set up to format on save: Prettier
+formats the file, then ESLint applies its own auto-fixes (import sorting and
+the rest). Install the recommended extensions when prompted — the dev container
+installs them for you.
+
+Prettier settings live in `.prettierrc`, and they match the `prettier/prettier`
+options `@gojob/eslint-config` enforces, so the formatter and the linter agree.
 
 ## Writing tests
 
